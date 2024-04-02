@@ -66,7 +66,7 @@ import Header from "./components/Header";
   }
 
   return (
-    <div className={`${darkMode && 'dark-mode'}`}>
+    <div className={`${darkMode && 'dark-mode'} main-wrapper`}>
       <div className="container">
         <Header handleToggleDarkMode={setDarkMode} />
         <Search handleSearchNote={setSearchText} />
