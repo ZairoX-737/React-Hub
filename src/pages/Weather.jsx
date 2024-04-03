@@ -5,7 +5,7 @@ import { useState } from "react";
 import WeatherForecast from "../components/Weather_components/WeatherForecast";
 
 const api = {
-  key: "417ff3f332927adcc72202170c06576e",
+  key: "APIKEY",
   base: "https://api.openweathermap.org/data/2.5/",
 };
 
