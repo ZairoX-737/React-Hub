@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 import NotesList from "../components/Notes_components/NotesList";
 import Search from "../components/Notes_components/Search";
 import Header from "../components/Notes_components/Header";
 
- const Notes = () =>{
+const Notes = () => {
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
@@ -28,23 +28,18 @@ import Header from "../components/Notes_components/Header";
     },
   ]);
 
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    const savedNotes = JSON.parse(
-        localStorage.getItem('react-notes-data')
-      );
+    const savedNotes = JSON.parse(localStorage.getItem("react-notes-data"));
 
-      if(savedNotes){
-        setNotes(savedNotes);
-      };
+    if (savedNotes) {
+      setNotes(savedNotes);
+    }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(
-      'react-notes-data', 
-      JSON.stringify(notes)
-    );
+    localStorage.setItem("react-notes-data", JSON.stringify(notes));
   }, [notes]);
 
   const addNote = (text) => {
@@ -52,29 +47,30 @@ import Header from "../components/Notes_components/Header";
     const newNote = {
       id: nanoid(),
       text: text,
-      date: date.toLocaleDateString('en-US'),
-    }
+      date: date.toLocaleDateString("en-US"),
+    };
     const newNotes = [...notes, newNote];
     setNotes(newNotes);
-  }
+  };
 
   const deleteNote = (id) => {
-    const newNotes = notes.filter((note)=> note.id !== id);
-    setNotes(newNotes)
-  }
+    const newNotes = notes.filter((note) => note.id !== id);
+    setNotes(newNotes);
+  };
 
   return (
-      <div className="notes-container">
-        <Header />
-        <Search handleSearchNote={setSearchText} />
-        <NotesList
-          notes={notes.filter((note) =>
-            note.text.toLowerCase().includes(searchText)
-          )}
-          handleAddNote={addNote}
-          handleDeleteNote={deleteNote}
-        />
-      </div>
-  );}
+    <div className="notes-container">
+      <Header />
+      <Search handleSearchNote={setSearchText} />
+      <NotesList
+        notes={notes.filter((note) =>
+          note.text.toLowerCase().includes(searchText)
+        )}
+        handleAddNote={addNote}
+        handleDeleteNote={deleteNote}
+      />
+    </div>
+  );
+};
 
- export default Notes
+export default Notes;
