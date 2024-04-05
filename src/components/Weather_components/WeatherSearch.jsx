@@ -3,11 +3,11 @@ import { MdSearch, MdOutlineLocationSearching } from "react-icons/md";
 
 const WeatherSearch = ({ setSearch, handleSearch, handleCurrentLocation }) => {
   return (
-    <div className="search">
+    <div className="search weather-search">
       <MdSearch className="search-icons" size="2em" />
       <input
         type="text"
-        placeholder="Type your city/town..."
+        placeholder="Seacrh city/town..."
         onChange={(e) => setSearch(e.target.value)}
       />
 
