@@ -28,8 +28,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {" "}
-    {/*delete for localStorage work*/}
+    {/*delete StrictMode for localStorage work*/}
     <RouterProvider router={router} />
   </React.StrictMode>
 );

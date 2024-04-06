@@ -1,14 +1,32 @@
 import React from "react";
 import { MdSearch, MdOutlineLocationSearching } from "react-icons/md";
 
-const WeatherSearch = ({ setSearch, handleSearch, handleCurrentLocation }) => {
+const WeatherSearch = ({
+  setSearch,
+  handleSearch,
+  handleCurrentLocation,
+  setIsLoading,
+}) => {
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const handleCurrentLocationPress = () => {
+    handleCurrentLocation();
+    setIsLoading(true);
+  };
+
   return (
     <div className="search weather-search">
       <MdSearch className="search-icons" size="2em" />
       <input
+        id="search_input"
         type="text"
         placeholder="Seacrh city/town..."
         onChange={(e) => setSearch(e.target.value)}
+        onKeyPress={(e) => handleKeyPress(e)}
       />
 
       <div className="weather-search-buttons">
@@ -17,7 +35,7 @@ const WeatherSearch = ({ setSearch, handleSearch, handleCurrentLocation }) => {
         </button>
         <button
           className="currentLocation"
-          onClick={() => handleCurrentLocation()}
+          onClick={() => handleCurrentLocationPress()}
         >
           <MdOutlineLocationSearching size="2em" />
           Current Location

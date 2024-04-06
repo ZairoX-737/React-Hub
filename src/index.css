@@ -169,10 +169,9 @@ textarea:focus {
   outline: none;
 }
 
-.search.weather-search{
+.search.weather-search {
   max-width: 426px;
 }
-
 
 .header {
   display: flex;
@@ -225,20 +224,28 @@ textarea:focus {
   color: #58585a;
 }
 
-.dark-mode .highlights-container{
+.dark-mode .highlights-container {
   background-color: #1c1c1e;
 }
 
-.dark-mode .aqi-header h4{
+.dark-mode .aqi-header h4 {
   color: #58585a;
 }
 
-.dark-mode .highlights-info-container{
+.dark-mode .highlights-info-container {
   background-color: #1a191c;
 }
 
-.dark-mode .highlights-info-small div{
-  background-color: #1a191c
+.dark-mode .highlights-info-small div {
+  background-color: #1a191c;
+}
+
+.dark-mode .air_icon {
+  color: #d3edfd;
+}
+
+.dark-mode .highlights-info-small-container h4 {
+  color: #58585a;
 }
 
 .weather-container {
@@ -376,124 +383,169 @@ textarea:focus {
   }
 }
 
-.weather-main-container{
+.weather-main-container {
   width: 100%;
   max-width: 1620px;
+  & .header {
+    max-width: 430px;
+  }
 }
 
-.weather-widgets-container{
+.weather-widgets-container {
   display: flex;
   justify-content: space-between;
   gap: 2em;
 }
 
-.weather-widgets-container .highlight{
+.weather-widgets-container .highlight {
   background-color: #333232;
-  
   width: 100%;
 }
 
-.highlights-container{
+.highlights-container {
   background-color: #b4ebff;
   padding: 0.7rem 0rem 1.5rem 0.7rem;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 4px;
-  & h2{
+  & h2 {
     margin: 0;
-    color: bla;
   }
 }
 
-.highlights-info-main{
+.highlights-info-main {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
   padding: 0 20px 0px 20px;
-  & h4{
+  & h4 {
     margin: 0;
     padding: 0;
   }
 }
 
-.highlights-info-container{
-  min-width: 500px;
-  min-height: 180px;
-  padding: 0.2em;
+.highlights-info-container {
+  min-width: 504px;
+  min-height: 160px;
   background-color: #5cbdf7cf;
   padding: 0.7rem 0.7rem 0.7rem 0.7rem;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px;
 }
 
-.aqi-header{
+.aqi-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  & h4{}
 }
 
-.aqi-info{
+.aqi-info {
   padding-top: 3em;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.aqi-info div{
+.aqi-info div {
   min-width: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  & h5{
+  & h5 {
     color: #404044;
     margin: 0;
   }
 }
 
-.highlights-info-small{
+.highlights-info-small {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
   padding: 0 20px 0px 20px;
 }
 
-.highlights-info-small div{
+.highlights-info-small-container {
   padding: 0.7rem 0.7rem 0.7rem 0.7rem;
   min-width: 220px;
-  min-height: 160px;
+  min-height: 120px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 10px;
   background-color: #5cbdf7cf;
-  & h4{
+  & h1 {
     padding: 0;
+  }
+  & h4 {
+    padding: 0;
+  }
+  & div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-right: 15px;
+  }
+  & span {
+    font-size: 0.8em;
   }
 }
 
-.suntime-info-container{
+.suntime-info-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 3em;
 }
 
-.suntime-info-item{
+.suntime-info-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  & h1{
+  & h1 {
     margin: 0;
   }
-  & h5{
+  & h5 {
     margin: 0;
     color: #404044;
   }
 }
 
-/* #b4ebff main-block */
+.air_icon {
+  color: white;
+}
 
-/* #5cbdf7cf sub-block */
+.aqi-status {
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.35em 1em;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 3px;
+}
 
-/* #d3edfd wind */
+.todayat-main{
+  padding: 0.7rem 0rem 0rem 0rem;
+  & h4{
+    padding: 0;
+  }
+}
 
-/* #2958b0 moon */
+.todayat-container{
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  padding: 20px 0px;
+}
 
-/* #ffd11df0 sun */
+.todayat-item-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.todayat-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #b4ebff;
+  padding: 0.7em 1.5em;
+  border-radius: 20px;
+  & h4{
+    padding: 0;
+  }
+}
