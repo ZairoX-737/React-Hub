@@ -16,7 +16,7 @@ const WeatherTodayAt = ({ forecastData }) => {
     const Hours = new Date(dt * 1000);
     return Hours.toLocaleDateString("en-US", {
       day: "numeric",
-      month: 'short'
+      month: "short",
     });
   };
 
@@ -46,7 +46,7 @@ const WeatherTodayAt = ({ forecastData }) => {
                 alt="weather-icon"
                 className="icon-small"
                 src={`icons/direction.png`}
-                style={{transform: `rotate(${item.wind.deg}deg)`, }}
+                style={{ transform: `rotate(${item.wind.deg}deg)` }}
               />
               <h4>{Math.round(item.wind.speed)} km/h</h4>
             </div>

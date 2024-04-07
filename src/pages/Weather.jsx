@@ -142,9 +142,14 @@ const Weather = () => {
         {airData && forecastData && (
           <div className="highlight">
             <WeatherHighlights airData={airData} weatherData={weatherData} />
-            <WeatherTodayAt forecastData={forecastData}/>
+            <div className="todayat-media-standart">
+              <WeatherTodayAt forecastData={forecastData} />
+            </div>
           </div>
         )}
+      </div>
+      <div className="todayat-media-small">
+        {forecastData && <WeatherTodayAt forecastData={forecastData} />}
       </div>
     </div>
   );
