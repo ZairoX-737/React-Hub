@@ -191,6 +191,10 @@ textarea:focus {
   color: white;
 }
 
+.dark-mode h3{
+  color: white;
+}
+
 .dark-mode h4 {
   color: white;
 }
@@ -393,7 +397,7 @@ textarea:focus {
 .weather-main-container {
   width: 100%;
   max-width: 1620px;
-  & .header {
+  & .header{
     max-width: 430px;
   }
 }
@@ -570,6 +574,22 @@ textarea:focus {
 .todayat-media-small {
   max-width: 1045px;
   display: none;
+}
+
+.copyright{
+  display: flex;
+  align-items:center;
+  gap: 2em;
+  min-height: 50px;
+  max-width: 1000px;
+  & a {
+    text-decoration: none;
+    color: black;
+  }
+  & h4{
+    margin: 0;
+    font-weight: 400;
+  }
 }
 
 @media screen and (max-width: 1870px) {

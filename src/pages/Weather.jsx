@@ -9,6 +9,8 @@ import { trackPromise } from "react-promise-tracker";
 import { areas } from "../constants/areas";
 import { PuffLoader } from "react-spinners";
 import WeatherTodayAt from "../components/Weather_components/WeatherTodayAt";
+import Copyright from "./Copyright";
+import { TypeAnimation } from "react-type-animation";
 
 const api = {
   key: "417ff3f332927adcc72202170c06576e",
@@ -121,7 +123,14 @@ const Weather = () => {
   return (
     <div className="weather-main-container">
       <div className="header">
-        <h1>./Weather</h1>
+        <TypeAnimation
+          sequence={["./Hub/Weather"]}
+          wrapper="h1"
+          cursor={false}
+          repeat={0}
+          speed={25}
+          style={{ fontSize: "2em", display: "inline-block" }}
+        />
         {isLoading ? <PuffLoader color="#36d7b7" size="45px" /> : ""}
         <Spinner area={areas.weather} />
       </div>
@@ -151,6 +160,7 @@ const Weather = () => {
       <div className="todayat-media-small">
         {forecastData && <WeatherTodayAt forecastData={forecastData} />}
       </div>
+      {weatherData && <Copyright />}
     </div>
   );
 };
