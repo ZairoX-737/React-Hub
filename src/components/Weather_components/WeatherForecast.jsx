@@ -32,7 +32,7 @@ const WeatherForecast = ({ forecastData }) => {
       <h2>5 Days Forecast</h2>
       <div className="daily-forecast-container">
         {forecast.map((item, idx) => (
-          <div className="daily-forecast-item">
+          <div className="daily-forecast-item" key={idx}>
             <div>
               <img
                 alt="weather-icon"
