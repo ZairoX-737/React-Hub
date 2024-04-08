@@ -29,6 +29,10 @@ const Hub = () => {
             <h4>./Weather</h4>
             <button className="link-button hub"></button>
           </Link>
+          <Link to="Test" className="link-list-container">
+            <h4>./Test</h4>
+            <button className="link-button hub"></button>
+          </Link>
         </div>
         <Outlet />
       </div>

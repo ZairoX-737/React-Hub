@@ -4,12 +4,12 @@ import WeatherSearch from "../components/Weather_components/WeatherSearch";
 import { useState } from "react";
 import WeatherForecast from "../components/Weather_components/WeatherForecast";
 import WeatherHighlights from "../components/Weather_components/WeatherHighlights";
-import { Spinner } from "./Loader";
+import { Spinner } from "../components/Loader";
 import { trackPromise } from "react-promise-tracker";
 import { areas } from "../constants/areas";
 import { PuffLoader } from "react-spinners";
 import WeatherTodayAt from "../components/Weather_components/WeatherTodayAt";
-import Copyright from "./Copyright";
+import Copyright from "../components/Copyright";
 import { TypeAnimation } from "react-type-animation";
 
 const api = {

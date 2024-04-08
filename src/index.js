@@ -6,6 +6,7 @@ import Hub from "./pages/Hub";
 import Notes from "./pages/Notes";
 import Weather from "./pages/Weather";
 import NotFound from "./pages/NotFound";
+import Test from "./pages/Test";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/Weather",
         element: <Weather />,
+      },
+      {
+        path: "/Test",
+        element: <Test />,
       },
     ],
   },
