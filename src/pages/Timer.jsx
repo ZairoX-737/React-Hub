@@ -1,12 +1,12 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 
-const Test = () => {
+const Timer = () => {
   return (
     <div className="test-main">
       <div className="header">
         <TypeAnimation
-          sequence={["./Hub/Test"]}
+          sequence={["./Hub/Timer"]}
           wrapper="h1"
           cursor={false}
           repeat={0}
@@ -18,4 +18,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default Timer;

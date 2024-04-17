@@ -2,29 +2,30 @@ import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import NotesList from "../components/Notes_components/NotesList";
 import Search from "../components/Notes_components/Search";
-import Header from "../components/Notes_components/Header";
+import NotesHeader from "../components/Notes_components/NotesHeader";
 
 const Notes = () => {
+  const templateDate = new Date().toLocaleDateString("en-US");
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
       text: "This is a note",
-      date: "02/04/2024",
+      date: templateDate,
     },
     {
       id: nanoid(),
       text: "Yes, just a simple notes app",
-      date: "02/04/2024",
+      date: templateDate,
     },
     {
       id: nanoid(),
       text: "Not something big",
-      date: "02/04/2024",
+      date: templateDate,
     },
     {
       id: nanoid(),
       text: "Just 4 fun :)",
-      date: "02/04/2024",
+      date: templateDate,
     },
   ]);
 
@@ -60,7 +61,7 @@ const Notes = () => {
 
   return (
     <div className="notes-container">
-      <Header />
+      <NotesHeader />
       <Search handleSearchNote={setSearchText} />
       <NotesList
         notes={notes.filter((note) =>

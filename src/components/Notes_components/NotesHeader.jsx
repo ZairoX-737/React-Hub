@@ -1,9 +1,9 @@
 import React from "react";
 import { TypeAnimation } from 'react-type-animation';
 
-const Header = () => {
+const NotesHeader = () => {
   return (
-    <div className="header">
+    <div>
       <TypeAnimation
         sequence={["./Hub/Notes"]}
         wrapper="h1"
@@ -16,4 +16,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default NotesHeader;

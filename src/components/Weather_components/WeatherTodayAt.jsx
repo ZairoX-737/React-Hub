@@ -3,7 +3,7 @@ import React from "react";
 const WeatherTodayAt = ({ forecastData }) => {
   var i = 0;
   const forecast = forecastData.list.filter((e) => ++i <= 8);
-  console.log(forecast);
+  // console.log(forecast);
 
   const handleGetHour = (dt) => {
     const Hours = new Date(dt * 1000);

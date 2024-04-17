@@ -1,6 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useState } from "react";
+import {
+  MdEventNote,
+  MdOutlineCloud,
+  MdOutlineAccessTime,
+} from "react-icons/md";
 
 const Hub = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,17 +26,24 @@ const Hub = () => {
           </div>
 
           <Link to="Notes" className="link-list-container">
-            <h4>./Notes</h4>
-            <button className="link-button hub"></button>
+            <div className="link-button">
+              <MdEventNote size="25" />
+              <span>/Notes</span>
+            </div>
           </Link>
 
           <Link to="Weather" className="link-list-container">
-            <h4>./Weather</h4>
-            <button className="link-button hub"></button>
+            <div className="link-button">
+              <MdOutlineCloud size="25" />
+              <span>/Weather</span>
+            </div>
           </Link>
-          <Link to="Test" className="link-list-container">
-            <h4>./Test</h4>
-            <button className="link-button hub"></button>
+
+          <Link to="Timer" className="link-list-container">
+            <div className="link-button">
+              <MdOutlineAccessTime size="25" />
+              <span>/Timer</span>
+            </div>
           </Link>
         </div>
         <Outlet />

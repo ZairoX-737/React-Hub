@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
+import "./styles/index.css";
 import Hub from "./pages/Hub";
 import Notes from "./pages/Notes";
 import Weather from "./pages/Weather";
 import NotFound from "./pages/NotFound";
-import Test from "./pages/Test";
+import Timer from "./pages/Timer";
 
 const router = createBrowserRouter([
   {
@@ -23,8 +23,8 @@ const router = createBrowserRouter([
         element: <Weather />,
       },
       {
-        path: "/Test",
-        element: <Test />,
+        path: "/Timer",
+        element: <Timer />,
       },
     ],
   },
