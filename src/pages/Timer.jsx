@@ -2,6 +2,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { useTimer } from "../components/Timer_components/useTimer";
 import { useState } from "react";
+import { MdOutlineNotStarted, MdOutlineStopCircle } from "react-icons/md";
 
 const Timer = () => {
   const [isRunning, setIsRunning] = useState(false);
@@ -26,14 +27,22 @@ const Timer = () => {
           style={{ fontSize: "2em", display: "inline-block" }}
         />
       </div>
-      <div>
-        {time.m}
-        <hr />
-        {time.s}
+      <div className="timer-box">
+        <h1>
+          {time.m < 10 ? "0" : ""}
+          {time.m}:{time.s < 10 ? "0" : ""}
+          {time.s}
+        </h1>
         {isRunning ? (
-          <button onClick={handleRun}>Stop</button>
+          <div className="timer-starter" onClick={handleRun}>
+            <MdOutlineStopCircle size="45" />
+            <span>Stop</span>
+          </div>
         ) : (
-          <button onClick={handleRun}>Start</button>
+          <div className="timer-starter" onClick={handleRun}>
+            <MdOutlineNotStarted size="45" />
+            <span>Start</span>
+          </div>
         )}
       </div>
     </div>

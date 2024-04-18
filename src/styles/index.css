@@ -43,7 +43,7 @@ table {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
@@ -690,6 +690,62 @@ textarea {
   .copyright h4 {
     margin: 0;
     font-weight: 400; }
+
+.timer-main {
+  width: 100%;
+  max-width: 1620px; }
+
+.timer-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 200px;
+  background-color: #e1e1e1;
+  border-radius: 20px;
+  padding: 1em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 4px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 4px; }
+  .timer-box h1 {
+    margin: 0;
+    margin-bottom: 0.5em;
+    color: black; }
+  .timer-box .timer-starter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 7px 10px;
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #fef68a;
+    -webkit-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 4px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 4px;
+    cursor: pointer; }
+    .timer-box .timer-starter:hover {
+      background-color: #67d7cc; }
 
 @media screen and (max-width: 1870px) {
   .highlights-info-main {
