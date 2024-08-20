@@ -6,9 +6,15 @@ import {
   MdOutlineCloud,
   MdOutlineAccessTime,
 } from "react-icons/md";
+import { useTimer } from "../components/Timer_components/useTimer";
 
 const Hub = () => {
   const [darkMode, setDarkMode] = useState(false);
+
+  const [TimerIsRunning, setTimerIsRunning] = useState(false);
+  const [TimerTime, setTimerTime] = useState(1500);
+  const time = useTimer(TimerTime, TimerIsRunning);
+
   return (
     <>
       <div className={`${darkMode && "dark-mode"} hub-container`}>
@@ -40,13 +46,29 @@ const Hub = () => {
           </Link>
 
           <Link to="Timer" className="link-list-container">
-            <div className="link-button">
-              <MdOutlineAccessTime size="25" />
-              <span>/Timer</span>
+            <div className="link-button timer-link-button">
+              <div>
+                <MdOutlineAccessTime size="25" />
+                <span>/Timer</span>
+              </div>
+              {TimerIsRunning ? (
+                <div
+                  style={{
+                    backgroundColor: "#FF4040",
+                    borderRadius: "30px",
+                    width: "15px",
+                    height: "15px",
+                  }}
+                />
+              ) : (
+                ""
+              )}
             </div>
           </Link>
         </div>
-        <Outlet />
+        <Outlet
+          context={[TimerIsRunning, setTimerIsRunning, setTimerTime, time]}
+        />
       </div>
     </>
   );

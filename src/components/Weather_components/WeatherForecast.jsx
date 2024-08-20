@@ -18,8 +18,8 @@ const WeatherForecast = ({ forecastData }) => {
   const getNextDay = (idx) => {
     idx = idx + 1;
     const Day = new Date();
-    Day.setDate(Day.getDay() + idx);
-    // console.log(Day);
+    Day.setDate(Day.getDate() + idx);
+    
     return Day.toLocaleDateString("en-US", { day: "numeric" });
   };
 
