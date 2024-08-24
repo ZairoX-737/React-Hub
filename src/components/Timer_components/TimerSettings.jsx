@@ -3,12 +3,21 @@ import { useState } from "react";
 import { MdOutlineSettings } from "react-icons/md";
 import TimerSettingTab from "./TimerSettingTab";
 
+
+
 const TimerSettings = () => {
-  const [isTimerModal, setIsTimerModal] = useState(false)
+  const [isTimerModal, setIsTimerModal] = useState(false);
 
   const handleOpenTimerModal = () => {
-    if (isTimerModal) setIsTimerModal(false);
-    else setIsTimerModal(true);
+    const timerModal = document.querySelector(".timer-modal-box");
+    if (isTimerModal) {
+      setIsTimerModal(false);
+      timerModal.classList.remove("timer-modal-box-show");
+      
+    } else {
+      setIsTimerModal(true);
+      timerModal.classList.add("timer-modal-box-show");
+    }
   };
 
   return (
@@ -19,8 +28,7 @@ const TimerSettings = () => {
         </div>
         <div className="timer-settings-text">Settings</div>
       </div>
-      {isTimerModal ? (<TimerSettingTab handleOpenTimerModal={handleOpenTimerModal} />) : (<></>)}
-      
+      <TimerSettingTab handleOpenTimerModal={handleOpenTimerModal} />
     </>
   );
 };

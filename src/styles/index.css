@@ -147,7 +147,9 @@ textarea {
   border-radius: 15px;
   padding: 5px 10px 5px 10px;
   -webkit-transition: all ease-in-out 0.15s;
-  transition: all ease-in-out 0.15s; }
+  transition: all ease-in-out 0.15s;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 1px 3px 6px;
+          box-shadow: rgba(0, 0, 0, 0.2) 1px 3px 6px; }
   .save:hover {
     cursor: pointer;
     background-color: #646a72; }
@@ -282,6 +284,14 @@ textarea {
     background-color: #1c1c1e; }
     .dark-mode .todayat-item h5 {
       color: #58585a; }
+  .dark-mode .timer-settings-bar {
+    background-color: #1c1c1e;
+    color: white; }
+    .dark-mode .timer-settings-bar:hover.timer-settings-bar .timer-settings-img {
+      color: black; }
+  .dark-mode .timer-modal-box {
+    color: white;
+    background-color: #1c1c1e; }
 
 .weather-container {
   background-color: #b4ebff;
@@ -720,7 +730,7 @@ textarea {
   margin-top: 0;
   gap: 0.5em;
   height: 30px;
-  width: 95%;
+  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -763,20 +773,23 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #e1e1e1;
+  background-color: #ba4949;
   border-radius: 15px;
   padding: 0.5em 1em;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 4px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 4px;
-  width: 90%; }
+  width: 95%;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
   .timer-box h1 {
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
     margin: 0;
-    margin-bottom: 0.5em;
-    color: black; }
+    margin: 0.1em 0em 0.2em;
+    color: white;
+    font-size: 45px; }
   .timer-box .timer-starter {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -807,7 +820,11 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0;
+  visibility: hidden;
   margin: 0 auto;
+  -webkit-transition: opacity 0.1s, visibility 0.2s linear;
+  transition: opacity 0.1s, visibility 0.2s linear;
   position: absolute;
   left: 210px;
   width: 400px;
@@ -829,6 +846,45 @@ textarea {
       color: black; }
   .timer-modal-box hr {
     width: 95%; }
+
+.timer-modal-box-show {
+  opacity: 1;
+  visibility: visible; }
+
+.timer-settings-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  gap: 1em; }
+  .timer-settings-container input {
+    width: 80px;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    text-indent: 0.6em; }
+
+.timer-modes-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 13px;
+  margin-bottom: 6px;
+  gap: 0.4em; }
+  .timer-modes-container button {
+    -webkit-transition: all ease-in-out 0.15s;
+    transition: all ease-in-out 0.15s;
+    background-color: white;
+    padding: 7px 6px;
+    border: 1px solid transparent;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 4px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 4px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer; }
+    .timer-modes-container button:hover {
+      background-color: #67d7cc; }
 
 @media screen and (max-width: 1870px) {
   .highlights-info-main {

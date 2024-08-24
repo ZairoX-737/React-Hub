@@ -19,7 +19,7 @@ const Timer = () => {
 
       <div
         style={{
-          width: "250px",
+          width: "280px",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",

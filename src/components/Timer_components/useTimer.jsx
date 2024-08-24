@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-export const useTimer = (initialTime, isRunning) => {
+export const useTimer = (initialTime, isRunning, TimerMode) => {
   const [time, setTime] = useState(initialTime);
 
   let hours = Math.floor(time / (60 * 60));
@@ -25,11 +25,30 @@ export const useTimer = (initialTime, isRunning) => {
       const customInterval = setInterval(() => {
         if (time > 0) {
           setTime((prev) => prev - 1);
+          console.log(time)
         }
       }, 1000);
 
       return () => clearInterval(customInterval);
     }
   }, [isRunning, time]);
+  
+  useEffect(() => {
+    if(TimerMode){
+      switch (TimerMode) {
+        case 1:
+          setTime(1500)
+          break;
+        case 2:
+          setTime(300);
+          break;
+        case 3:
+          setTime(900);
+          break;
+        default:
+          break;
+      }
+    }
+  }, [TimerMode])
   return obj;
 };

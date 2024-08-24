@@ -1,7 +1,7 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
 
-const TimerSettingTab = ({handleOpenTimerModal}) => {
+const TimerSettingTab = ({ handleOpenTimerModal }) => {
   return (
     <div className="timer-modal-box">
       <div
@@ -38,6 +38,22 @@ const TimerSettingTab = ({handleOpenTimerModal}) => {
       </div>
 
       <hr></hr>
+      <div className="timer-settings-container">
+        <div style={{ display: "flex", gap: "0.5em", alignItems: "center" }}>
+          H:
+          <input type="number" min='0' ></input>
+        </div>
+
+        <div style={{ display: "flex", gap: "0.5em", alignItems: "center" }}>
+          M:
+          <input type="number"></input>
+        </div>
+
+        <div style={{ display: "flex", gap: "0.5em", alignItems: "center" }}>
+          S:
+          <input type="number"></input>
+        </div>
+      </div>
     </div>
   );
 };

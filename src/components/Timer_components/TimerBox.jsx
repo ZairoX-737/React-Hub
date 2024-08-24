@@ -1,23 +1,31 @@
 import React from "react";
 import { MdOutlineNotStarted, MdOutlineStopCircle } from "react-icons/md";
 import { useOutletContext } from "react-router-dom";
+import TimerModes from "./TimerModes";
 
 const TimerBox = () => {
-const [TimerIsRunning, setTimerIsRunning, setTimerTime, time] =
-  useOutletContext();
+  const [
+    TimerIsRunning,
+    setTimerIsRunning,
+    // eslint-disable-next-line no-unused-vars
+    TimerTime,
+    setTimerTime,
+    time,
+    // eslint-disable-next-line no-unused-vars
+    TimerMode,
+    setTimerMode,
+  ] = useOutletContext();
 
-  function handleRun() {
+  const handleRun = () => {
     if (TimerIsRunning) {
       setTimerIsRunning(false);
-      const timeconverted = 
-      (time.h * 3600) + 
-      (time.m * 60) +
-      (time.s * 1)
-      setTimerTime(timeconverted)
+      const timeconverted = time.h * 3600 + time.m * 60 + time.s * 1;
+      setTimerTime(timeconverted);
     } else {
       setTimerIsRunning(true);
     }
-  }
+  };
+
   return (
     <div className="timer-box">
       <h1>
@@ -34,8 +42,11 @@ const [TimerIsRunning, setTimerIsRunning, setTimerTime, time] =
           <MdOutlineNotStarted size="35" />
         </div>
       )}
+      <TimerModes
+        setTimerIsRunning={setTimerIsRunning}
+        setTimerMode={setTimerMode}
+      />
     </div>
   );
 };
-
 export default TimerBox;
